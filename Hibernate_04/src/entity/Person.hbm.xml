@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-10 20:52:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="entity.Person" table="PERSON2">
+    	<!-- 联合主键 -->
+        <composite-id name="id" class="entity.PersonKey">
+        	<key-property name="firstName" type="string" column="FIRST_NAME"></key-property>
+        	<key-property name="lastName" type="string" column="LAST_NAME"></key-property>
+        </composite-id>
+
+        <property name="age" type="integer">
+            <column name="AGE" />
+        </property>
+      </class>
+</hibernate-mapping>

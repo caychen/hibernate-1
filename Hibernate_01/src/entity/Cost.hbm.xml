@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-10 20:52:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="entity.Cost" table="COST">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="baseDuration" type="java.lang.Integer">
+            <column name="BASE_DURATION" />
+        </property>
+        <property name="baseCost" type="java.lang.Float">
+            <column name="BASE_COST" />
+        </property>
+        <property name="unitCost" type="java.lang.Float">
+            <column name="UNIT_COST" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+        <property name="descr" type="java.lang.String">
+            <column name="DESCR" />
+        </property>
+        <property name="createTime" type="java.sql.Date">
+            <column name="CREATETIME" />
+        </property>
+        <property name="startTime" type="java.sql.Date">
+            <column name="STARTTIME" />
+        </property>
+    </class>
+</hibernate-mapping>

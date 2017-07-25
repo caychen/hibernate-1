@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-10 20:52:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="entity.Account" table="Account">
+        <cache usage="read-only"/><!-- region指定使用哪种cache配置来使用二级缓存 -->
+        <id name="id" type="integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="CREATEDATE" />
+        </property>
+        
+        <!-- 描述services属性，采用一对多关系加载Service记录 -->
+        <set name="services" cascade="all" inverse="true">
+        	<!-- 关联条件，column写外键字段，默认与该Account类的主键关联 -->
+        	<key column="ACCOUNT_ID"></key>
+        	<!-- 指定采用一对多关系，class指定关联的类型 -->
+        	<one-to-many class="entity.Service" />
+        </set>
+    </class>
+    
+    <!-- 一个查询语句，一个query -->
+    <query name="findAll">
+    	<!-- 避免大于号小于号等符号打乱xml文件 -->
+    	<![CDATA[from Account]]>
+    </query>
+</hibernate-mapping>

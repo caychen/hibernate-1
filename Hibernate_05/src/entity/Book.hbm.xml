@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-10 20:52:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+
+	<!--描述了Book和Product之间的映射描述-->
+	 <joined-subclass name="entity.Book" table="Book" extends="entity.Product">
+	 	<!-- 指定Book表中哪个字段与Product表关联 -->
+	 	<key column="ID"></key>
+	 	
+	 	<property name="author" type="string">
+            <column name="AUTHOR" />
+        </property>
+        <property name="pulisher" type="string">
+            <column name="PUBLISHER" />
+        </property>
+        <property name="wordNumber" type="string">
+            <column name="WORD_NUMBER" />
+        </property>
+        <property name="totalPage" type="string">
+            <column name="TOTAL_PAGE" />
+        </property>
+	 </joined-subclass>  
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-21 22:42:21 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="entity.Trans" table="TRANS"
+    	optimistic-lock="version">
+    	<id name="id" type="integer">
+    		<column name="ID" />
+    		<generator class="identity" />
+    	</id>
+    	<version name="version" type="integer">
+    		<column name="VERSION"></column>
+    	</version>
+    	<property name="startplace" type="string">
+    		<column name="START_PLACE" />
+    	</property>
+    	<property name="endplace" type="string">
+    		<column name="END_PLACE" />
+    	</property>
+    	<property name="tickets" type="integer">
+    		<column name="TICKETS" />
+    	</property>
+    </class>
+</hibernate-mapping>

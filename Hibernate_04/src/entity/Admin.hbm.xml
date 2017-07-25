@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-10 20:52:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="entity.Admin" table="Admin">
+        <id name="id" type="integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="code" type="string">
+            <column name="ADMIN_CODE" />
+        </property>
+         <property name="password" type="string">
+            <column name="PASSWORD" />
+        </property>
+         <property name="name" type="string">
+            <column name="NAME" />
+        </property>
+         <property name="telephone" type="string">
+            <column name="TELEPHONE" />
+        </property>
+        <property name="enrollDate" type="date">
+            <column name="ENROLLDATE" />
+        </property>
+        
+        <!-- 描述roles属性，采用many-to-many加载Role对象数据 -->
+        <set name="roles" table="Admin_Role"><!-- table为中间关系表 -->
+        	<!-- 指明关系表与当前类型关联的外键字段 -->
+        	<key column="ADMIN_ID"></key>
+        	
+        	<!-- class指定关联的另一方，column指定关系表与另一方关联的外键字段 -->
+        	<many-to-many class="entity.Role" column="ROLE_ID"></many-to-many>
+		</set>
+
+    </class>
+</hibernate-mapping>

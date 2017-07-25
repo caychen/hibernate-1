@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-3-10 20:52:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+
+	<!--描述了Car和Product之间的映射描述-->
+	 <joined-subclass name="entity.Car" table="Car" extends="entity.Product">
+	 	<!-- 指定Car表中哪个字段与Product表关联 -->
+	 	<key column="ID"></key>
+	 	
+	 	<property name="brand" type="string">
+            <column name="BRAND" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" />
+        </property>
+        <property name="color" type="string">
+            <column name="COLOR" />
+        </property>
+        <property name="displacement" type="string">
+            <column name="DISPLACEMENT" />
+        </property>
+	 </joined-subclass>  
+</hibernate-mapping>
